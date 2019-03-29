@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body id="demo">
+   <p id="p1">姓名：<input type="text" /></p>
+	<p class="a">年龄：<input type="text" /></p>	
+	<p>电话：<input type="text" /></p>
+		<p>地址：<input type="text" id="address"/></p>
+		<button onclick="getInfo()">确定</button>
+		<script type="text/javascript">
+			document.write("\n");
+			var a  = document.getElementsByName("demo");
+			console.log("body的子元素节点一共有"+demo.childNodes.length+"节点");
+			for(var i = 0; i<demo.childNodes.length;i++){
+				console.log("第"+(i+1)+"个节点的名称是："+demo.childNodes[i].nodeName);
+			}
+			var p1 = document.getElementById("p1");
+			var sex = document.createTextNode("性别：");
+			var p = document.createElement("p");
+			var input = document.createElement("input");
+			input.setAttribute("type","text");
+			p1.appendChild(p);
+			p.appendChild(sex);
+			p.appendChild(input);
+			var ad = document.getElementById("address");
+			ad.style.width = "200px";
+			ad.style.height ="100px";
+			ad.style.border = "2px solid red"; 
+			function getInfo(){
+				var txt = "";
+				var p =document.getElementsByTagName("p");
+				var ip =document.getElementsByTagName("input");
+			for (var i =0;i<ip.length;i++) {
+				txt += p[i].firstChild.nodeValue+ip[i].value;
+			}
+			alert(txt);
+			}
+		</script>
+	</body>
+</html>
